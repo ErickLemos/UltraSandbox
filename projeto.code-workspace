@@ -12,6 +12,7 @@
             "ms-vscode-remote.remote-containers",
             "DavidAnson.vscode-markdownlint",
             "ms-kubernetes-tools.vscode-kubernetes-tools",
+            "ms-kubernetes-tools.kind-vscode",
             "ms-vscode-remote.remote-wsl",
             "redhat.vscode-yaml"
         ]
