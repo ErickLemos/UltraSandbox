@@ -1,0 +1,19 @@
+
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {},
+    "extensions": {
+        "recommendations": [
+            "ms-azuretools.vscode-docker",
+            "ms-vscode-remote.remote-containers",
+            "DavidAnson.vscode-markdownlint",
+            "ms-kubernetes-tools.vscode-kubernetes-tools",
+            "ms-vscode-remote.remote-wsl",
+            "redhat.vscode-yaml"
+        ]
+    }
+}
