@@ -16,7 +16,7 @@ public class VersaoRepositoryImpl implements VersaoRepository {
     private final VersaoMapper mapper;
 
     @Override
-    public Versao getById(String id) throws NotFoundException {
+    public Versao getById(String id) {
         var entity = repository.findById(id);
         if (entity.isPresent()) return mapper.toDomain(entity.get());
         throw new NotFoundException("valor não foi encontrado");
