@@ -6,6 +6,7 @@ plugins {
 
 group = 'com.sandbox'
 version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
 
 configurations {
     compileOnly {
@@ -18,19 +19,16 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-    annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-    implementation project(':src:core')
-    implementation project(':src:infra')
-    implementation project(':src:messaging')
-    implementation project(':src:service')
-    implementation project(':src:rest')
-    implementation project(':src:repository')
+    implementation project(':core')
+    implementation project(':domain')
+    implementation project(':infra')
+    implementation project(':rest')
+    implementation project(':repository')
 }
 
 tasks.named('test') {

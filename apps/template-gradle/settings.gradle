@@ -1,10 +1,18 @@
 rootProject.name = 'template'
-include('src:application')
-include('src:core')
-include('src:domain')
-include('src:infra')
-include('src:messaging')
-include('src:repository')
-include('src:rest')
-include('src:service')
-include('src:templates')
+include ':core',
+        ':application',
+        ':domain',
+        ':infra',
+        ':repository',
+        ':rest'
+
+project(':core').projectDir = file('src/core')
+project(':application').projectDir = file('src/application')
+project(':domain').projectDir = file('src/domain')
+project(':infra').projectDir = file('src/infra')
+project(':repository').projectDir = file('src/repository')
+project(':rest').projectDir = file('src/rest')
+
+
+
+

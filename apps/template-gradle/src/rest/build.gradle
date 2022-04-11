@@ -1,7 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '2.6.6'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'java'
+    id 'java-library'
 }
 
 group = 'com.sandbox'
@@ -23,16 +23,18 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-    annotationProcessor 'org.projectlombok:lombok'
+    api 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-    implementation project(':src:core')
-    implementation project(':src:domain')
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    implementation "org.mapstruct:mapstruct:1.5.0.RC1"
+    annotationProcessor "org.mapstruct:mapstruct-processor:1.5.0.RC1"
+    testAnnotationProcessor "org.mapstruct:mapstruct-processor:1.5.0.RC1"
+
+    implementation project(':core')
+    implementation project(':domain')
 }
 
 tasks.named('test') {
