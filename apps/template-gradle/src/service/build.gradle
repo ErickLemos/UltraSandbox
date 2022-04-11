@@ -32,6 +32,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     implementation project(':src:core')
+    implementation project(':src:domain')
 }
 
 tasks.named('test') {

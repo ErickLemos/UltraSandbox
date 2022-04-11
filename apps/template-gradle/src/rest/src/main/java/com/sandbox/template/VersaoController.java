@@ -1,15 +1,15 @@
 package com.sandbox.template;
 
+import com.sandbox.template.core.constants.ApplicationConstants;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class TemplateController {
+public class VersaoController {
 
     @GetMapping
     public String getVersao() {
-        var templateClass = new TemplateClass();
-        return templateClass.getTemplate().getValor();
+        return ApplicationConstants.VERSAO;
     }
 
 }
