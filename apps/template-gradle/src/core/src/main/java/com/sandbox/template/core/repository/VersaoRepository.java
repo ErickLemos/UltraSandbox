@@ -1,6 +1,10 @@
 package com.sandbox.template.core.repository;
 
+import com.sandbox.template.core.exceptions.NotFoundException;
+import com.sandbox.template.domain.Versao;
+
 public interface VersaoRepository {
-    String getById(String id);
-    String save(String versao);
+    Versao getById(String id) throws NotFoundException;
+
+    Versao save(String versao);
 }

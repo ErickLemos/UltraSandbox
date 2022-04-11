@@ -14,6 +14,6 @@ public class VersaoEntity {
 
     @Id
     private String id;
-    private String versao;
+    private String numeroDaVersao;
 
 }
