@@ -1,2 +1,5 @@
-package com.sandbox.template;public interface TemplateInterface {
+package com.sandbox.template;
+
+public interface TemplateInterface {
+    TemplateEnum getTemplate();
 }

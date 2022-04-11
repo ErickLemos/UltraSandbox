@@ -8,7 +8,8 @@ public class TemplateController {
 
     @GetMapping
     public String getVersao() {
-        return "0.0.1";
+        var templateClass = new TemplateClass();
+        return templateClass.getTemplate().getValor();
     }
 
 }
