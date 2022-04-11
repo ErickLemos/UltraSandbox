@@ -1,4 +1,0 @@
-rootProject.name = 'template'
-include('src:application')
-include('src:rest')
-include('src:domain')

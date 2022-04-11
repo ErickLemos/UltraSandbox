@@ -9,6 +9,8 @@ Para nosso ambiente de trabalho você precisará das seguintes ferramentas insta
 - WSL 2
 - Distro Linux WSL: Ubuntu é o recomendável
 
+*É recomendável também que seu computador tenha 8gb + de ram para suportar todos os recursos ativos.*
+
 ### Integrando Docker ao WSL
 
 Para uma ambiente mais simples você precisará integrar o Docker ao WSL: Na aba Resources -> WSL Integration, então basta selecionar sua distro.
