@@ -1,4 +1,9 @@
 rootProject.name = 'template'
 include('src:application')
-include('src:rest')
+include('src:core')
 include('src:domain')
+include('src:infra')
+include('src:messaging')
+include('src:rest')
+include('src:services')
+include('src:templates')
