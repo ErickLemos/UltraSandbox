@@ -1,4 +1,4 @@
-# Guia de configuração básico
+# Guia de configuração básica
 
 ## Ambiente básico
 
