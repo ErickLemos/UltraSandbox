@@ -1,4 +1,4 @@
-package com.spacesandbox.template.infra;
+package com.spacesandbox.template.business;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

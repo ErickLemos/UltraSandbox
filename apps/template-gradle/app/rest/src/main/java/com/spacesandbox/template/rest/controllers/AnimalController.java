@@ -1,5 +1,6 @@
 package com.spacesandbox.template.rest.controllers;
 
+import com.spacesandbox.template.core.business.commands.AdicionarAnimalCommand;
 import com.spacesandbox.template.core.repository.AnimalRepository;
 import com.spacesandbox.template.rest.mappers.AnimalDtoMapper;
 import com.spacesandbox.template.rest.models.AnimalDto;
@@ -10,7 +11,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("animal")
-public record AnimalController(AnimalRepository animalRepository, AnimalDtoMapper mapper) {
+public record AnimalController(AnimalRepository animalRepository, AnimalDtoMapper mapper,
+                               AdicionarAnimalCommand adicionarAnimalCommand) {
+
 
     @GetMapping
     public ResponseEntity<List<AnimalDto>> getAll() {
@@ -26,7 +29,7 @@ public record AnimalController(AnimalRepository animalRepository, AnimalDtoMappe
 
     @PostMapping
     public ResponseEntity<AnimalDto> save(@RequestBody AnimalDto dto) {
-        var animal = animalRepository.save(mapper.toDomain(dto));
+        var animal = adicionarAnimalCommand.execute(mapper.toDomain(dto));
         return ResponseEntity.ok(mapper.toDto(animal));
     }
 
