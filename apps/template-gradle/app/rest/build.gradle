@@ -26,12 +26,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
 	implementation "org.mapstruct:mapstruct:1.5.0.RC1"
 	annotationProcessor "org.mapstruct:mapstruct-processor:1.5.0.RC1"
 	testAnnotationProcessor "org.mapstruct:mapstruct-processor:1.5.0.RC1"
-
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
 
 	implementation project(':app:core')
 	implementation project(':app:domain')
