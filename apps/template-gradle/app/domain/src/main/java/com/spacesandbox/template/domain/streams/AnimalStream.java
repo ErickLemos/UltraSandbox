@@ -13,8 +13,8 @@ public class AnimalStream implements StreamPersonalizada<Animal> {
 
     Stream<Animal> stream;
 
-    public static AnimalStream of(Stream<Animal> stream) {
-        return new AnimalStream(stream);
+    public static AnimalStream of(Animal animal) {
+        return new AnimalStream(Stream.of(animal));
     }
 
     public Stream<Animal> bipedes() {
