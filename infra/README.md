@@ -13,7 +13,7 @@ Para nosso ambiente de trabalho você precisará das seguintes ferramentas insta
 
 ### Integrando Docker ao WSL
 
-Para uma ambiente mais simples você precisará integrar o Docker ao WSL: Na aba Resources -> WSL Integration, então basta selecionar sua distro.
+Para termos um ambiente mais simples vamos integrar o Docker ao WSL. Em configurações na Aba Resources, vá em WSL Integration e selecione sua distro.
 **Isso permite você utilizar o docker dentro da sua distro linux, compartilhando o mesmo docker entre windows e linux.**
 
 ### Usando Visual Code
