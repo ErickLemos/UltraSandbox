@@ -7,7 +7,6 @@ import com.spacesandbox.template.repository.mappers.AnimalEntityMapper;
 import com.spacesandbox.template.repository.repositorys.AnimalMongoRepository;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -16,8 +15,9 @@ public record AnimalRepositoryImpl(AnimalMongoRepository repository,
 
     @Override
     public List<Animal> findAll() {
-        var animais = repository.findAll();
-        return animais.isEmpty() ? new ArrayList<>() : animais.stream().map(mapper::toDomain).toList();
+        return repository.findAll()
+                .stream().map(mapper::toDomain)
+                .toList();
     }
 
     @Override

@@ -1,7 +1,7 @@
-package com.spacesandbox.template.mappers;
+package com.spacesandbox.template.rest.mappers;
 
 import com.spacesandbox.template.domain.models.Animal;
-import com.spacesandbox.template.models.AnimalDto;
+import com.spacesandbox.template.rest.models.AnimalDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

@@ -1,4 +1,4 @@
-package com.spacesandbox.template.models;
+package com.spacesandbox.template.rest.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;

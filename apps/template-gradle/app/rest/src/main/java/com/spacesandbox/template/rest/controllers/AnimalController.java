@@ -1,8 +1,8 @@
-package com.spacesandbox.template.controllers;
+package com.spacesandbox.template.rest.controllers;
 
 import com.spacesandbox.template.core.repository.AnimalRepository;
-import com.spacesandbox.template.mappers.AnimalDtoMapper;
-import com.spacesandbox.template.models.AnimalDto;
+import com.spacesandbox.template.rest.mappers.AnimalDtoMapper;
+import com.spacesandbox.template.rest.models.AnimalDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
