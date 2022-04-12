@@ -1,7 +1,7 @@
 FROM gradle:7-jdk17-alpine as builder
 WORKDIR /application
 COPY . .
-RUN gradle build --no-daemon
+RUN gradle build
 COPY app/application/build/libs/application-0.0.1-SNAPSHOT.jar application.jar
 RUN java -Djarmode=layertools -jar application.jar extract
 
