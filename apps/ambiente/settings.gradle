@@ -1,4 +1,4 @@
-rootProject.name = 'template'
+rootProject.name = 'ultrasandbox-ambiente'
 include 'app:application'
 include 'app:business'
 include 'app:core'
