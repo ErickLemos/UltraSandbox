@@ -1,4 +1,4 @@
-FROM gradle:7-jdk17-alpine as builder
+FROM gradle:jdk17-alpine as builder
 WORKDIR /application
 COPY . /application/
 RUN gradle build --no-daemon --parallel
