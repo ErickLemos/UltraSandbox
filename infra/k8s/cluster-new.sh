@@ -1,6 +1,6 @@
 #!/bin/bash
 
-k3d cluster create ultrasandbox --agents 1
+minikube start --driver=docker
 
 # Adicionando repos helm
 helm repo add bitnami https://charts.bitnami.com/bitnami

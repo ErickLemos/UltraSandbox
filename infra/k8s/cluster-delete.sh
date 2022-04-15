@@ -1,4 +1,3 @@
 #!/bin/bash
 
-
-k3d cluster delete ultrasandbox
+minikube delete

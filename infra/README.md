@@ -8,6 +8,8 @@ Para nosso ambiente de trabalho você precisará das seguintes ferramentas insta
 - Visual Code Studio
 - WSL 2
 - Distro Linux WSL: Ubuntu é o recomendável
+- Helm Charts
+- Minikube
 
 *É recomendável também que seu computador tenha 8gb + de ram para suportar todos os recursos ativos.*
 
