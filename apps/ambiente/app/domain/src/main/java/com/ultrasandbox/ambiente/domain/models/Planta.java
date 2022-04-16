@@ -6,9 +6,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Animal implements SerVivo {
+public class Planta implements SerVivo {
 
-    private String id;
     private String nome;
 
 }

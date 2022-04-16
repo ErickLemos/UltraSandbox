@@ -10,26 +10,37 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public record AnimalRepositoryImpl(AnimalMongoRepository repository,
-                                   AnimalEntityMapper mapper) implements AnimalRepository {
+public record AnimalRepositoryImpl(
+        AnimalMongoRepository repository,
+        AnimalEntityMapper mapper
+) implements AnimalRepository {
 
     @Override
-    public List<Animal> findAll() {
+    public List<Animal> buscarVarios() {
         return repository.findAll()
                 .stream().map(mapper::toDomain)
                 .toList();
     }
 
     @Override
-    public Animal findById(String id) {
-        var entity = repository.findById(id);
-        return entity.map(mapper::toDomain).orElseThrow(() -> new NotFoundException("animal não encontrado"));
+    public Animal buscarPorId(String id) {
+        var animal = repository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundException("Animal não pode ser encontrado"));
+
+        return mapper.toDomain(animal);
     }
 
     @Override
-    public Animal save(Animal animal) {
-        var entity = repository.save(mapper.toEntity(animal));
-        return mapper.toDomain(entity);
+    public Animal salvar(Animal animal) {
+        var animalEntity = mapper.toEntity(animal);
+        var animalSalvo = repository.save(animalEntity);
+        return mapper.toDomain(animalSalvo);
+    }
+
+    @Override
+    public void deletarPorId(String id) {
+        // TODO document why this method is empty
     }
 
 }

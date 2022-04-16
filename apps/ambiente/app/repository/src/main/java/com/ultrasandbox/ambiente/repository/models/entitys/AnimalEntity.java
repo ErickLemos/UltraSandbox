@@ -1,20 +1,15 @@
-package com.ultrasandbox.ambiente.repository.models;
+package com.ultrasandbox.ambiente.repository.models.entitys;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Getter
-@Setter
-@Builder
+@Data
 @Document
 public class AnimalEntity {
 
     @Id
     private String id;
     private String nome;
-    private Integer patas;
 
 }

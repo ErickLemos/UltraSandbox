@@ -1,21 +1,19 @@
 package com.ultrasandbox.ambiente.rest.mappers;
 
 import com.ultrasandbox.ambiente.domain.models.Animal;
-import com.ultrasandbox.ambiente.rest.models.AnimalDto;
+import com.ultrasandbox.ambiente.rest.models.dtos.AnimalDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface AnimalDtoMapper {
 
-    @Mapping(target = "id", source = "id")
     @Mapping(target = "nome", source = "nome")
-    @Mapping(target = "patas", source = "patas")
+    @Mapping(target = "id", source = "id")
     Animal toDomain(AnimalDto dto);
 
-    @Mapping(target = "id", source = "id")
     @Mapping(target = "nome", source = "nome")
-    @Mapping(target = "patas", source = "patas")
+    @Mapping(target = "id", source = "id")
     AnimalDto toDto(Animal domain);
 
 }
