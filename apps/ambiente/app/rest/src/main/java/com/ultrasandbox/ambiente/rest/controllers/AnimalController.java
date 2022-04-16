@@ -41,7 +41,7 @@ public class AnimalController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<MensagemDto> deletePorId(@PathVariable String id) {
+    public ResponseEntity<MensagemDto> deletarPorId(@PathVariable String id) {
         commands.deletarPorId(id);
         return ResponseEntity.ok(new MensagemDto("animal foi deletado com sucesso"));
     }

@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 public class Planta implements SerVivo {
 
+    private String id;
     private String nome;
 
 }
