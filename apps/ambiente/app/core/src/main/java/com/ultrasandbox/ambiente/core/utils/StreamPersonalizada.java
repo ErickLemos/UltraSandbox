@@ -1,4 +1,4 @@
-package com.ultrasandbox.ambiente.domain.utils;
+package com.ultrasandbox.ambiente.core.utils;
 
 import java.util.Comparator;
 import java.util.Iterator;
