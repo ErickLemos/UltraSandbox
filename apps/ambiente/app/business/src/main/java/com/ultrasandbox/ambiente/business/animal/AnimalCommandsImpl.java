@@ -2,6 +2,7 @@ package com.ultrasandbox.ambiente.business.animal;
 
 import com.ultrasandbox.ambiente.business.animal.commands.BuscarAnimaisCommand;
 import com.ultrasandbox.ambiente.business.animal.commands.BuscarAnimalCommand;
+import com.ultrasandbox.ambiente.business.animal.commands.DeletarAnimalCommand;
 import com.ultrasandbox.ambiente.business.animal.commands.SalvarAnimalCommand;
 import com.ultrasandbox.ambiente.core.business.animal.AnimalCommands;
 import com.ultrasandbox.ambiente.domain.models.Animal;
@@ -17,6 +18,7 @@ public class AnimalCommandsImpl implements AnimalCommands {
     private BuscarAnimaisCommand buscarAnimaisCommand;
     private BuscarAnimalCommand buscarAnimalCommand;
     private SalvarAnimalCommand salvarAnimalCommand;
+    private DeletarAnimalCommand deletarAnimalCommand;
 
     @Override
     public List<Animal> buscarVarios() {
@@ -35,7 +37,7 @@ public class AnimalCommandsImpl implements AnimalCommands {
 
     @Override
     public void deletarPorId(String id) {
-        // TODO document why this method is empty
+        deletarAnimalCommand.process(id);
     }
 
 }

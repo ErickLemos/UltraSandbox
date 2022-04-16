@@ -40,7 +40,7 @@ public record AnimalRepositoryImpl(
 
     @Override
     public void deletarPorId(String id) {
-        // TODO document why this method is empty
+       repository.deleteById(id);
     }
 
 }
