@@ -24,9 +24,8 @@ public record AnimalRepositoryImpl(
 
     @Override
     public Animal buscarPorId(String id) {
-        var animal = repository
-                .findById(id)
-                .orElseThrow(() -> new NotFoundException("Animal não pode ser encontrado"));
+        var animal = repository.findById(id)
+                .orElseThrow(() -> new NotFoundException("animal não pode ser encontrado"));
 
         return mapper.toDomain(animal);
     }
@@ -40,7 +39,11 @@ public record AnimalRepositoryImpl(
 
     @Override
     public void deletarPorId(String id) {
-       repository.deleteById(id);
+        try {
+            repository.deleteById(id);
+        } catch (Exception e) {
+            throw new NotFoundException("animal não pode ser encontrada", e.getCause());
+        }
     }
 
 }
