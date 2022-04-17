@@ -16,8 +16,7 @@ public class DeletarAnimalCommand {
         var operation = new DeletarAnimalOperation();
         operation.setId(id);
 
-        Pipeline.of(operation)
-                .process(deletarAnimalProcessor);
+        Pipeline.of(operation).process(deletarAnimalProcessor);
     }
 
 
