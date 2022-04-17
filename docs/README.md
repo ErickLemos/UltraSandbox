@@ -8,5 +8,9 @@ SpaceBox é um projeto que tem como objetivo simular a colonização espacial. D
 
 ## Gerencia de ambiente
 
-- planeta
+- planeta: gerencia o planeta e suas caracteristicas
 - seres vivos: animais e plantas
+
+### Sistema de extinção
+ 
+- Caso uma fonte de alimento seja tirada de um animal (outros animais ou plantas)

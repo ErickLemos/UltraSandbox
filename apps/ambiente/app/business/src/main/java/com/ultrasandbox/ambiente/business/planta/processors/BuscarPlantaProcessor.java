@@ -20,7 +20,7 @@ public class BuscarPlantaProcessor implements Processor<BuscarPlantasOperation, 
     public BuscarPlantasOperation process(BuscarPlantasOperation operation) {
         var plantas = buscarTodosOuPorId(operation.getId());
         operation.setPlantas(plantas);
-        return null;
+        return operation;
     }
 
     private List<Planta> buscarTodosOuPorId(String id) {
