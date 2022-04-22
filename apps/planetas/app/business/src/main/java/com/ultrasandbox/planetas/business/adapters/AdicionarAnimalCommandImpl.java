@@ -1,6 +1,6 @@
-package com.ultrasandbox.template.business.adapters;
+package com.ultrasandbox.planetas.business.adapters;
 
-import com.ultrasandbox.template.business.processors.AdicionarAnimalProcessor;
+import com.ultrasandbox.planetas.business.processors.AdicionarAnimalProcessor;
 import com.ultrasandbox.template.core.business.commands.AdicionarAnimalCommand;
 import com.ultrasandbox.template.core.utils.Pipeline;
 import com.ultrasandbox.template.domain.models.Animal;

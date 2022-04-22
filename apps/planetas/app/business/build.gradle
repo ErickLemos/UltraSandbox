@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'com.ultrasandbox.template.business'
+group = 'com.ultrasandbox.planetas.business'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 

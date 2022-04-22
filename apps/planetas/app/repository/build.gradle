@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'com.ultrasandbox.template.repository'
+group = 'com.ultrasandbox.planetas.repository'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
