@@ -1,4 +1,4 @@
-rootProject.name = 'ultrasandbox-planetas'
+rootProject.name = 'planetas'
 include 'app:application'
 include 'app:business'
 include 'app:core'

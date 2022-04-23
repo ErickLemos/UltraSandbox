@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'com.ultrasandbox.planetas.application'
+group = 'com.ultrasandbox.planetas'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
@@ -24,9 +24,9 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	implementation project(':app:business')
 	implementation project(':app:core')
 	implementation project(':app:domain')
+	implementation project(':app:business')
 	implementation project(':app:infra')
 	implementation project(':app:repository')
 	implementation project(':app:rest')
