@@ -39,6 +39,7 @@ public class PlanetaRepositoryImpl implements PlanetaRepository {
 
     @Override
     public void deletarPorId(String id) {
+        if (!repository.existsById(id)) throw new NotFoundException("Planeta não foi encontrado");
         repository.deleteById(id);
     }
 
