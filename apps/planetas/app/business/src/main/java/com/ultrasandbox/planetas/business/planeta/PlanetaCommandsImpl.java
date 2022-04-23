@@ -1,6 +1,9 @@
 package com.ultrasandbox.planetas.business.planeta;
 
 import com.ultrasandbox.planetas.business.planeta.commands.AdicionarPlanetaCommand;
+import com.ultrasandbox.planetas.business.planeta.commands.BuscarPlanetaPorIdCommand;
+import com.ultrasandbox.planetas.business.planeta.commands.BuscarPlanetasCommand;
+import com.ultrasandbox.planetas.business.planeta.commands.DeletarPlanetaPorIdCommand;
 import com.ultrasandbox.planetas.core.business.commands.PlanetaCommands;
 import com.ultrasandbox.planetas.domain.models.Planeta;
 import lombok.RequiredArgsConstructor;
@@ -12,16 +15,19 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PlanetaCommandsImpl implements PlanetaCommands {
 
-    private AdicionarPlanetaCommand adicionarPlanetaCommand;
+    private final AdicionarPlanetaCommand adicionarPlanetaCommand;
+    private final BuscarPlanetaPorIdCommand buscarPlanetaPorIdCommand;
+    private final BuscarPlanetasCommand buscarPlanetasCommand;
+    private final DeletarPlanetaPorIdCommand deletarPlanetaPorIdCommand;
 
     @Override
     public List<Planeta> buscar() {
-        return null;
+        return buscarPlanetasCommand.process();
     }
 
     @Override
     public Planeta buscarPorId(String id) {
-        return null;
+        return buscarPlanetaPorIdCommand.process(id);
     }
 
     @Override
@@ -31,7 +37,7 @@ public class PlanetaCommandsImpl implements PlanetaCommands {
 
     @Override
     public void deletarPorId(String id) {
-        // TODO document why this method is empty
+        deletarPlanetaPorIdCommand.process(id);
     }
 
 }

@@ -3,9 +3,11 @@ package com.ultrasandbox.planetas.business.planeta.operations;
 import com.ultrasandbox.planetas.domain.models.Planeta;
 import lombok.Data;
 
-@Data
-public class AdicionarPlanetaOperation {
+import java.util.List;
 
-    private Planeta planeta;
+@Data
+public class BuscarPlanetasOperation {
+
+    private List<Planeta> planetas;
 
 }

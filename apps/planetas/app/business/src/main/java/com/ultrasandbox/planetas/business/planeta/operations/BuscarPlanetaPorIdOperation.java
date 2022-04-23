@@ -4,7 +4,7 @@ import com.ultrasandbox.planetas.domain.models.Planeta;
 import lombok.Data;
 
 @Data
-public class AdicionarPlanetaOperation {
+public class BuscarPlanetaPorIdOperation {
 
     private Planeta planeta;
 
