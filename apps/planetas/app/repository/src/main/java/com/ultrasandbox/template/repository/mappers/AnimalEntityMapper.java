@@ -1,6 +1,5 @@
 package com.ultrasandbox.template.repository.mappers;
 
-import com.ultrasandbox.template.domain.models.Animal;
 import com.ultrasandbox.template.repository.models.AnimalEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

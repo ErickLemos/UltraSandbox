@@ -2,7 +2,6 @@ package com.ultrasandbox.planetas.business.processors;
 
 import com.ultrasandbox.template.core.repository.AnimalRepository;
 import com.ultrasandbox.template.core.utils.Processor;
-import com.ultrasandbox.template.domain.models.Animal;
 import org.springframework.stereotype.Component;
 
 @Component

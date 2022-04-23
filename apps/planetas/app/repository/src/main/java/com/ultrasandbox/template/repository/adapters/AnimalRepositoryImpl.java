@@ -2,7 +2,6 @@ package com.ultrasandbox.template.repository.adapters;
 
 import com.ultrasandbox.template.core.exceptions.NotFoundException;
 import com.ultrasandbox.template.core.repository.AnimalRepository;
-import com.ultrasandbox.template.domain.models.Animal;
 import com.ultrasandbox.template.repository.mappers.AnimalEntityMapper;
 import com.ultrasandbox.template.repository.repositorys.AnimalMongoRepository;
 import org.springframework.stereotype.Component;
