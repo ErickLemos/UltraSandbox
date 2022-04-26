@@ -1,7 +1,7 @@
-package com.ultrasandbox.planetas.business.planeta.commands;
+package com.ultrasandbox.planetas.business.planeta.command;
 
-import com.ultrasandbox.planetas.business.planeta.operations.AdicionarPlanetaOperation;
-import com.ultrasandbox.planetas.business.planeta.processors.AdicionarPlanetaProcessor;
+import com.ultrasandbox.planetas.business.planeta.command.operations.AdicionarPlanetaOperation;
+import com.ultrasandbox.planetas.business.planeta.command.processors.AdicionarPlanetaProcessor;
 import com.ultrasandbox.planetas.core.utils.Pipeline;
 import com.ultrasandbox.planetas.domain.models.Planeta;
 import org.springframework.stereotype.Component;

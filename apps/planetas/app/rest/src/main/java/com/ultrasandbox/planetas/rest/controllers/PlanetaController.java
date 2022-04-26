@@ -1,6 +1,6 @@
 package com.ultrasandbox.planetas.rest.controllers;
 
-import com.ultrasandbox.planetas.core.business.commands.PlanetaCommands;
+import com.ultrasandbox.planetas.core.business.operations.PlanetaOperations;
 import com.ultrasandbox.planetas.core.utils.Mensagem;
 import com.ultrasandbox.planetas.rest.mappers.PlanetaDtoMapper;
 import com.ultrasandbox.planetas.rest.models.PlanetaDto;
@@ -15,19 +15,19 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PlanetaController {
 
-    private final PlanetaCommands planetaCommands;
+    private final PlanetaOperations planetaOperations;
     private final PlanetaDtoMapper mapper;
 
     @GetMapping
     public ResponseEntity<List<PlanetaDto>> buscarTodos() {
-        var planetas = planetaCommands.buscar();
+        var planetas = planetaOperations.buscar();
         var dtos = planetas.stream().map(mapper::toDto).toList();
         return ResponseEntity.ok(dtos);
     }
 
     @GetMapping("{id}")
     public ResponseEntity<PlanetaDto> buscarPorId(@PathVariable String id) {
-        var planeta = planetaCommands.buscarPorId(id);
+        var planeta = planetaOperations.buscarPorId(id);
         var dto = mapper.toDto(planeta);
         return ResponseEntity.ok(dto);
     }
@@ -44,13 +44,13 @@ public class PlanetaController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<Mensagem> deletarPorId(@PathVariable String id) {
-        planetaCommands.deletarPorId(id);
+        planetaOperations.deletarPorId(id);
         return ResponseEntity.ok(new Mensagem("Exclusão", "planeta foi excluido com sucesso"));
     }
 
     private ResponseEntity<PlanetaDto> salvar(PlanetaDto dto) {
         var planeta = mapper.toDomain(dto);
-        var planetaSalvo = planetaCommands.salvar(planeta);
+        var planetaSalvo = planetaOperations.salvar(planeta);
         var dtoRetorno = mapper.toDto(planetaSalvo);
         return ResponseEntity.ok(dtoRetorno);
     }

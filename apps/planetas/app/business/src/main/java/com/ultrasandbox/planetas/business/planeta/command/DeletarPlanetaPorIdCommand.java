@@ -1,7 +1,7 @@
-package com.ultrasandbox.planetas.business.planeta.commands;
+package com.ultrasandbox.planetas.business.planeta.command;
 
-import com.ultrasandbox.planetas.business.planeta.operations.DeletarPlanetaPorIdOperation;
-import com.ultrasandbox.planetas.business.planeta.processors.DeletarPlanetaPorIdProcessor;
+import com.ultrasandbox.planetas.business.planeta.command.operations.DeletarPlanetaPorIdOperation;
+import com.ultrasandbox.planetas.business.planeta.command.processors.DeletarPlanetaPorIdProcessor;
 import com.ultrasandbox.planetas.core.utils.Pipeline;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

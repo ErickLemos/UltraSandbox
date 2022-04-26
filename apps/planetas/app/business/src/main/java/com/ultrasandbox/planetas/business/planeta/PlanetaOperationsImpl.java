@@ -1,10 +1,10 @@
 package com.ultrasandbox.planetas.business.planeta;
 
-import com.ultrasandbox.planetas.business.planeta.commands.AdicionarPlanetaCommand;
-import com.ultrasandbox.planetas.business.planeta.commands.BuscarPlanetaPorIdCommand;
-import com.ultrasandbox.planetas.business.planeta.commands.BuscarPlanetasCommand;
-import com.ultrasandbox.planetas.business.planeta.commands.DeletarPlanetaPorIdCommand;
-import com.ultrasandbox.planetas.core.business.commands.PlanetaCommands;
+import com.ultrasandbox.planetas.business.planeta.command.AdicionarPlanetaCommand;
+import com.ultrasandbox.planetas.business.planeta.command.DeletarPlanetaPorIdCommand;
+import com.ultrasandbox.planetas.business.planeta.querys.BuscarPlanetaPorIdQuery;
+import com.ultrasandbox.planetas.business.planeta.querys.BuscarPlanetasQuery;
+import com.ultrasandbox.planetas.core.business.operations.PlanetaOperations;
 import com.ultrasandbox.planetas.domain.models.Planeta;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -13,21 +13,22 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class PlanetaCommandsImpl implements PlanetaCommands {
+public class PlanetaOperationsImpl implements PlanetaOperations {
+
+    private final BuscarPlanetasQuery buscarPlanetasQuery;
+    private final BuscarPlanetaPorIdQuery buscarPlanetaPorIdQuery;
 
     private final AdicionarPlanetaCommand adicionarPlanetaCommand;
-    private final BuscarPlanetaPorIdCommand buscarPlanetaPorIdCommand;
-    private final BuscarPlanetasCommand buscarPlanetasCommand;
     private final DeletarPlanetaPorIdCommand deletarPlanetaPorIdCommand;
 
     @Override
     public List<Planeta> buscar() {
-        return buscarPlanetasCommand.process();
+        return buscarPlanetasQuery.process();
     }
 
     @Override
     public Planeta buscarPorId(String id) {
-        return buscarPlanetaPorIdCommand.process(id);
+        return buscarPlanetaPorIdQuery.process(id);
     }
 
     @Override

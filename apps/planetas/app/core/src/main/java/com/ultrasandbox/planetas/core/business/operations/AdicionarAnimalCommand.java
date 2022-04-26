@@ -1,4 +1,4 @@
-package com.ultrasandbox.planetas.core.business.commands;
+package com.ultrasandbox.planetas.core.business.operations;
 
 import com.ultrasandbox.planetas.domain.models.vida.Animal;
 
