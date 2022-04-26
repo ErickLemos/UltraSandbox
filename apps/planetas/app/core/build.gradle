@@ -23,10 +23,14 @@ repositories {
 }
 
 dependencies {
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 
-	implementation project(':app:domain')
+    implementation "org.mapstruct:mapstruct:1.5.0.RC1"
+    annotationProcessor "org.mapstruct:mapstruct-processor:1.5.0.RC1"
+    testAnnotationProcessor "org.mapstruct:mapstruct-processor:1.5.0.RC1"
+
+    implementation project(':app:domain')
 }
 
 tasks.named('test') {

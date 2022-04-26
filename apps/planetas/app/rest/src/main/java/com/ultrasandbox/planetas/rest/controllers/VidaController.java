@@ -1,9 +1,9 @@
 package com.ultrasandbox.planetas.rest.controllers;
 
-import com.ultrasandbox.planetas.core.business.operations.PlanetaOperations;
+import com.ultrasandbox.planetas.core.business.operations.VidaOperations;
 import com.ultrasandbox.planetas.core.utils.Mensagem;
-import com.ultrasandbox.planetas.rest.mappers.PlanetaDtoMapper;
-import com.ultrasandbox.planetas.rest.models.PlanetaDto;
+import com.ultrasandbox.planetas.rest.models.vida.VidaDto;
+import com.ultrasandbox.planetas.rest.utils.VidaMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,34 +11,34 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("planetas")
+@RequestMapping("vida")
 @RequiredArgsConstructor
-public class PlanetaController {
+public class VidaController {
 
-    private final PlanetaOperations operations;
-    private final PlanetaDtoMapper mapper;
+    private final VidaOperations operations;
+    private final VidaMapper mapper;
 
     @GetMapping
-    public ResponseEntity<List<PlanetaDto>> buscarTodos() {
+    public ResponseEntity<List<VidaDto>> buscar() {
         var planetas = operations.buscar();
         var dtos = planetas.stream().map(mapper::toDto).toList();
         return ResponseEntity.ok(dtos);
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<PlanetaDto> buscarPorId(@PathVariable String id) {
+    public ResponseEntity<VidaDto> buscarPorId(@PathVariable String id) {
         var planeta = operations.buscarPorId(id);
         var dto = mapper.toDto(planeta);
         return ResponseEntity.ok(dto);
     }
 
     @PostMapping
-    public ResponseEntity<PlanetaDto> adicionar(@RequestBody PlanetaDto dto) {
+    public ResponseEntity<VidaDto> adicionar(@RequestBody VidaDto dto) {
         return salvar(dto);
     }
 
     @PutMapping
-    public ResponseEntity<PlanetaDto> atualizar(@RequestBody PlanetaDto dto) {
+    public ResponseEntity<VidaDto> atualizar(@RequestBody VidaDto dto) {
         return salvar(dto);
     }
 
@@ -48,11 +48,10 @@ public class PlanetaController {
         return ResponseEntity.ok(new Mensagem("Exclusão", "planeta foi excluido com sucesso"));
     }
 
-    private ResponseEntity<PlanetaDto> salvar(PlanetaDto dto) {
-        var planeta = mapper.toDomain(dto);
-        var planetaSalvo = operations.salvar(planeta);
-        var dtoRetorno = mapper.toDto(planetaSalvo);
+    private ResponseEntity<VidaDto> salvar(VidaDto dto) {
+        var vida = mapper.toDomain(dto);
+        var vidaSalva = operations.salvar(vida);
+        var dtoRetorno = mapper.toDto(vidaSalva);
         return ResponseEntity.ok(dtoRetorno);
     }
-
 }
