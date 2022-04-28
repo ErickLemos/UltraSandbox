@@ -26,11 +26,14 @@ dependencies {
 
     implementation project(':app:core')
     implementation project(':app:domain')
-    implementation project(':app:business-planeta')
-    implementation project(':app:business-vida')
     implementation project(':app:infra')
-    implementation project(':app:repository')
     implementation project(':app:rest')
+
+    implementation project(':app:repositorys:vida')
+    implementation project(':app:repositorys:planeta')
+
+    implementation project(':app:business:vida')
+    implementation project(':app:business:planeta')
 }
 
 tasks.named('test') {
