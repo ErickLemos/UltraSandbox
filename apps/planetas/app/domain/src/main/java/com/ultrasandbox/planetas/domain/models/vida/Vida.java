@@ -1,7 +1,7 @@
 package com.ultrasandbox.planetas.domain.models.vida;
 
 import com.ultrasandbox.planetas.domain.models.enums.TipoDeVida;
-import com.ultrasandbox.planetas.domain.models.vida.dados.DadosVida;
+import com.ultrasandbox.planetas.domain.models.vida.dados.VidaDados;
 
 public interface Vida {
 
@@ -11,6 +11,8 @@ public interface Vida {
 
     TipoDeVida getTipo();
 
-    DadosVida getDados();
+    VidaDados getDados();
+
+    void setDados(VidaDados dados);
 
 }

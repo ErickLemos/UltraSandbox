@@ -1,6 +1,7 @@
 rootProject.name = 'planetas'
 include 'app:application'
-include 'app:business'
+include 'app:business-planeta'
+include 'app:business-vida'
 include 'app:core'
 include 'app:domain'
 include 'app:infra'

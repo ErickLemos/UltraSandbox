@@ -1,7 +1,8 @@
 package com.ultrasandbox.planetas.domain.models.vida;
 
 import com.ultrasandbox.planetas.domain.models.enums.TipoDeVida;
-import com.ultrasandbox.planetas.domain.models.vida.dados.DadosPlanta;
+import com.ultrasandbox.planetas.domain.models.vida.dados.PlantaDados;
+import com.ultrasandbox.planetas.domain.models.vida.dados.VidaDados;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,10 @@ public class Planta implements Vida {
     private String id;
     private String nome;
     private TipoDeVida tipo = TipoDeVida.PLANTA;
-    private DadosPlanta dados;
+    private PlantaDados dados;
 
+    @Override
+    public void setDados(VidaDados dados) {
+        this.dados = (PlantaDados) dados;
+    }
 }

@@ -19,17 +19,18 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	implementation project(':app:core')
-	implementation project(':app:domain')
-	implementation project(':app:business')
-	implementation project(':app:infra')
-	implementation project(':app:repository')
-	implementation project(':app:rest')
+    implementation project(':app:core')
+    implementation project(':app:domain')
+    implementation project(':app:business-planeta')
+    implementation project(':app:business-vida')
+    implementation project(':app:infra')
+    implementation project(':app:repository')
+    implementation project(':app:rest')
 }
 
 tasks.named('test') {
