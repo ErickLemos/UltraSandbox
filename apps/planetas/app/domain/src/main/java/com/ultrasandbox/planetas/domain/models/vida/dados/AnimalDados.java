@@ -2,6 +2,7 @@ package com.ultrasandbox.planetas.domain.models.vida.dados;
 
 import com.ultrasandbox.planetas.domain.models.enums.TipoDeAlimentacao;
 import com.ultrasandbox.planetas.domain.models.enums.TipoDeAnimal;
+import com.ultrasandbox.planetas.domain.models.vida.Vida;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,5 +17,6 @@ public class AnimalDados implements VidaDados {
     private String id;
     private TipoDeAnimal tipoDeAnimal;
     private List<TipoDeAlimentacao> tipoDeAlimentacao;
+    private List<Vida> alimentacao;
 
 }

@@ -6,7 +6,8 @@ import lombok.AllArgsConstructor;
 public enum TipoDeAlimentacao {
     CARNIVORO("CARNIVORO"),
     ONIVORO("ONIVORO"),
-    HERBIVOROS("HERBIVOROS");
+    HERBIVOROS("HERBIVOROS"),
+    FOTOSINTESE("FOTOSINTESE");
 
     private final String valor;
 }
