@@ -11,6 +11,7 @@ public interface VidaAnimalDadosEntityMapper {
 
     VidaAnimalDadosEntityMapper INSTANCE = Mappers.getMapper(VidaAnimalDadosEntityMapper.class);
 
+    @Mapping(target = "alimentacao", ignore = true)
     @Mapping(target = "tipoDeAnimal", ignore = true)
     @Mapping(target = "tipoDeAlimentacao", ignore = true)
     AnimalDados toDomain(AnimalDadosEntity entity);

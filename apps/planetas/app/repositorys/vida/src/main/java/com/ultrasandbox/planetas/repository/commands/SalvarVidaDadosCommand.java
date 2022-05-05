@@ -7,11 +7,9 @@ import com.ultrasandbox.planetas.repository.models.PlantaDadosEntity;
 import com.ultrasandbox.planetas.repository.repositorys.VidaAnimalDadosMongoRepository;
 import com.ultrasandbox.planetas.repository.repositorys.VidaPlantaDadosMongoRepository;
 import com.ultrasandbox.planetas.repository.utils.VidaDadosEntity;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public record SalvarVidaDadosCommand(
         VidaPlantaDadosMongoRepository dadosPlantaRepository,
         VidaAnimalDadosMongoRepository dadosAnimalRepository) {
