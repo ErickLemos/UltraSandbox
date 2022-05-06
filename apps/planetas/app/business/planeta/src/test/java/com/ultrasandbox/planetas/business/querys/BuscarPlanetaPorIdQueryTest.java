@@ -1,5 +1,6 @@
 package com.ultrasandbox.planetas.business.querys;
 
+import com.ultrasandbox.planetas.core.exceptions.NotFoundException;
 import com.ultrasandbox.planetas.core.repository.PlanetaRepository;
 import com.ultrasandbox.planetas.domain.models.Planeta;
 import org.junit.jupiter.api.DisplayName;
@@ -42,6 +43,14 @@ class BuscarPlanetaPorIdQueryTest {
     void testComIdInvalido() {
         assertThrows(IllegalArgumentException.class,
                 () -> query.process("id id"));
+    }
+
+    @Test
+    @DisplayName("teste com resultado não encontrado")
+    void testComValorNaoEncontrado() {
+        when(repository.buscarPorId(any(String.class))).thenThrow(NotFoundException.class);
+        assertThrows(NotFoundException.class,
+                () -> query.process("idid"));
     }
 
 }
