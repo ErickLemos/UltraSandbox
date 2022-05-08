@@ -3,7 +3,7 @@ package com.ultrasandbox.planetas.repository.adapters;
 import com.ultrasandbox.planetas.core.exceptions.NotFoundException;
 import com.ultrasandbox.planetas.core.repository.PlanetaRepository;
 import com.ultrasandbox.planetas.domain.models.Planeta;
-import com.ultrasandbox.planetas.repository.mappers.PlanetaEntityMapper;
+import com.ultrasandbox.planetas.repository.mappers.planeta.PlanetaEntityMapper;
 import com.ultrasandbox.planetas.repository.repositorys.PlanetaMongoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

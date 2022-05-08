@@ -1,13 +1,11 @@
-package com.ultrasandbox.planetas.repository.utils;
+package com.ultrasandbox.planetas.repository.mappers.vida;
 
 import com.ultrasandbox.planetas.core.exceptions.FactoryException;
 import com.ultrasandbox.planetas.domain.models.enums.TipoDeVida;
 import com.ultrasandbox.planetas.domain.models.vida.Animal;
 import com.ultrasandbox.planetas.domain.models.vida.Planta;
 import com.ultrasandbox.planetas.domain.models.vida.Vida;
-import com.ultrasandbox.planetas.repository.mappers.VidaAnimalEntityMapper;
-import com.ultrasandbox.planetas.repository.mappers.VidaPlantaEntityMapper;
-import com.ultrasandbox.planetas.repository.models.VidaEntity;
+import com.ultrasandbox.planetas.repository.entitys.vida.VidaEntity;
 
 public interface VidaMapperFactory {
     static Vida toDomain(VidaEntity entity) {

@@ -5,7 +5,7 @@ import com.ultrasandbox.planetas.core.repository.VidaRepository;
 import com.ultrasandbox.planetas.domain.models.vida.Vida;
 import com.ultrasandbox.planetas.repository.commands.SalvarVidaDadosCommand;
 import com.ultrasandbox.planetas.repository.repositorys.VidaMongoRepository;
-import com.ultrasandbox.planetas.repository.utils.VidaMapperFactory;
+import com.ultrasandbox.planetas.repository.mappers.vida.VidaMapperFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

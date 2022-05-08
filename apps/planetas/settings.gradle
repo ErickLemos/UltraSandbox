@@ -5,6 +5,8 @@ include 'app:domain'
 include 'app:infra'
 include 'app:rest'
 
+include 'app:repositorys:entitys'
+include 'app:repositorys:metadata'
 include 'app:repositorys:planeta'
 include 'app:repositorys:vida'
 

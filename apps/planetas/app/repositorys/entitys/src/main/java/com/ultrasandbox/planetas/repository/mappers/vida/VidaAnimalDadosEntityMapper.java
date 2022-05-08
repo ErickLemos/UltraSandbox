@@ -1,7 +1,7 @@
-package com.ultrasandbox.planetas.repository.mappers;
+package com.ultrasandbox.planetas.repository.mappers.vida;
 
 import com.ultrasandbox.planetas.domain.models.vida.dados.AnimalDados;
-import com.ultrasandbox.planetas.repository.models.AnimalDadosEntity;
+import com.ultrasandbox.planetas.repository.entitys.vida.AnimalDadosEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;

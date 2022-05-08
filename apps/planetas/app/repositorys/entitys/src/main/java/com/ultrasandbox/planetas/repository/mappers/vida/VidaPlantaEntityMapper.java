@@ -1,8 +1,8 @@
-package com.ultrasandbox.planetas.repository.mappers;
+package com.ultrasandbox.planetas.repository.mappers.vida;
 
 import com.ultrasandbox.planetas.domain.models.vida.Planta;
-import com.ultrasandbox.planetas.repository.models.PlantaDadosEntity;
-import com.ultrasandbox.planetas.repository.models.VidaEntity;
+import com.ultrasandbox.planetas.repository.entitys.vida.PlantaDadosEntity;
+import com.ultrasandbox.planetas.repository.entitys.vida.VidaEntity;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

@@ -2,11 +2,11 @@ package com.ultrasandbox.planetas.repository.commands;
 
 import com.ultrasandbox.planetas.core.exceptions.FactoryException;
 import com.ultrasandbox.planetas.domain.models.enums.TipoDeVida;
-import com.ultrasandbox.planetas.repository.models.AnimalDadosEntity;
-import com.ultrasandbox.planetas.repository.models.PlantaDadosEntity;
 import com.ultrasandbox.planetas.repository.repositorys.VidaAnimalDadosMongoRepository;
 import com.ultrasandbox.planetas.repository.repositorys.VidaPlantaDadosMongoRepository;
-import com.ultrasandbox.planetas.repository.utils.VidaDadosEntity;
+import com.ultrasandbox.planetas.repository.entitys.vida.utils.VidaDadosEntity;
+import com.ultrasandbox.planetas.repository.entitys.vida.AnimalDadosEntity;
+import com.ultrasandbox.planetas.repository.entitys.vida.PlantaDadosEntity;
 import org.springframework.stereotype.Component;
 
 @Component

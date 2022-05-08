@@ -1,4 +1,4 @@
-package com.ultrasandbox.planetas.repository.models;
+package com.ultrasandbox.planetas.repository.entitys.planeta;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

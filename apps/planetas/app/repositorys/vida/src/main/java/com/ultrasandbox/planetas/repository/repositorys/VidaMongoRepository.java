@@ -1,6 +1,6 @@
 package com.ultrasandbox.planetas.repository.repositorys;
 
-import com.ultrasandbox.planetas.repository.models.VidaEntity;
+import com.ultrasandbox.planetas.repository.entitys.vida.VidaEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

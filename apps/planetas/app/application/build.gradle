@@ -29,6 +29,8 @@ dependencies {
     implementation project(':app:infra')
     implementation project(':app:rest')
 
+    implementation project(':app:repositorys:entitys')
+    implementation project(':app:repositorys:metadata')
     implementation project(':app:repositorys:vida')
     implementation project(':app:repositorys:planeta')
 
