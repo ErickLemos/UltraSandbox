@@ -1,8 +1,0 @@
-rootProject.name = 'ultrasandbox-ambiente'
-include 'app:application'
-include 'app:business'
-include 'app:core'
-include 'app:domain'
-include 'app:infra'
-include 'app:repository'
-include 'app:rest'
