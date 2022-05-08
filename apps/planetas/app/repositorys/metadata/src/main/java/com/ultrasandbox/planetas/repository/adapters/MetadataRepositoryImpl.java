@@ -45,4 +45,10 @@ public class MetadataRepositoryImpl implements MetadataRepository {
         return MetadataEntityMapper.INSTANCE.toDomain(entitySalva);
     }
 
+    @Override
+    public void deletarPorId(String id) {
+        if (!repository.existsById(id)) throw new NotFoundException("metadata não foi encontrada");
+        repository.deleteById(id);
+    }
+
 }

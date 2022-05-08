@@ -1,9 +1,9 @@
-package com.ultrasandbox.planetas.core.repository;
+package com.ultrasandbox.planetas.core.business.actions;
 
 import com.ultrasandbox.planetas.domain.models.Metadata;
 import com.ultrasandbox.planetas.domain.models.Planeta;
 
-public interface MetadataRepository {
+public interface MetadataActions {
 
     Metadata buscarPorId(String id);
 

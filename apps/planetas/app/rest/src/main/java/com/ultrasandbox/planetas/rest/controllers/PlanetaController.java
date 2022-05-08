@@ -1,6 +1,6 @@
 package com.ultrasandbox.planetas.rest.controllers;
 
-import com.ultrasandbox.planetas.core.business.operations.PlanetaOperations;
+import com.ultrasandbox.planetas.core.business.actions.PlanetaActions;
 import com.ultrasandbox.planetas.core.utils.Mensagem;
 import com.ultrasandbox.planetas.rest.mappers.PlanetaDtoMapper;
 import com.ultrasandbox.planetas.rest.models.PlanetaDto;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PlanetaController {
 
-    private final PlanetaOperations operations;
+    private final PlanetaActions operations;
     private final PlanetaDtoMapper mapper;
 
     @GetMapping

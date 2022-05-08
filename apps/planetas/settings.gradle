@@ -10,6 +10,7 @@ include 'app:repositorys:metadata'
 include 'app:repositorys:planeta'
 include 'app:repositorys:vida'
 
+include 'app:business:metadata'
 include 'app:business:planeta'
 include 'app:business:vida'
 

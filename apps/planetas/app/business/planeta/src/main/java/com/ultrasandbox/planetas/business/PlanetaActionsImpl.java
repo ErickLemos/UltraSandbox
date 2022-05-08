@@ -5,7 +5,7 @@ import com.ultrasandbox.planetas.business.command.deletar.DeletarPlanetaPorIdCom
 import com.ultrasandbox.planetas.business.command.editar.EditarPlanetaCommand;
 import com.ultrasandbox.planetas.business.querys.BuscarPlanetaPorIdQuery;
 import com.ultrasandbox.planetas.business.querys.BuscarPlanetasQuery;
-import com.ultrasandbox.planetas.core.business.operations.PlanetaOperations;
+import com.ultrasandbox.planetas.core.business.actions.PlanetaActions;
 import com.ultrasandbox.planetas.domain.models.Planeta;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -15,7 +15,7 @@ import java.util.Objects;
 
 @Component
 @RequiredArgsConstructor
-public class PlanetaOperationsImpl implements PlanetaOperations {
+public class PlanetaActionsImpl implements PlanetaActions {
 
     private final BuscarPlanetasQuery buscarPlanetasQuery;
     private final BuscarPlanetaPorIdQuery buscarPlanetaPorIdQuery;

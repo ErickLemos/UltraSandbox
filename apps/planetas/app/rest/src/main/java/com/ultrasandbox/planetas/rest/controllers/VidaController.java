@@ -1,6 +1,6 @@
 package com.ultrasandbox.planetas.rest.controllers;
 
-import com.ultrasandbox.planetas.core.business.operations.VidaOperations;
+import com.ultrasandbox.planetas.core.business.actions.VidaActions;
 import com.ultrasandbox.planetas.core.utils.Mensagem;
 import com.ultrasandbox.planetas.rest.models.vida.VidaDto;
 import com.ultrasandbox.planetas.rest.utils.VidaMapper;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class VidaController {
 
-    private final VidaOperations operations;
+    private final VidaActions operations;
     private final VidaMapper mapper;
 
     @GetMapping
