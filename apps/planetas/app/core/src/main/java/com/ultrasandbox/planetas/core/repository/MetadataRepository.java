@@ -9,6 +9,6 @@ public interface MetadataRepository {
 
     Metadata buscarPorPlaneta(Planeta planeta);
 
-    Metadata salvar(Metadata metadata);
+    Metadata salvar(Planeta planeta, Metadata metadata);
 
 }

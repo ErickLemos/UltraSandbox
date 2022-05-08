@@ -1,4 +1,4 @@
-package com.ultrasandbox.planetas.business.command.operations;
+package com.ultrasandbox.planetas.business.command.deletar.operations;
 
 import com.ultrasandbox.planetas.domain.models.vida.Vida;
 import lombok.Data;

@@ -1,6 +1,6 @@
-package com.ultrasandbox.planetas.business.command.processors;
+package com.ultrasandbox.planetas.business.command.deletar.processors;
 
-import com.ultrasandbox.planetas.business.command.operations.AdicionarVidaOperation;
+import com.ultrasandbox.planetas.business.command.deletar.operations.AdicionarVidaOperation;
 import com.ultrasandbox.planetas.core.repository.VidaRepository;
 import com.ultrasandbox.planetas.core.utils.Processor;
 import lombok.RequiredArgsConstructor;

@@ -1,14 +1,15 @@
-package com.ultrasandbox.planetas.business.command;
+package com.ultrasandbox.planetas.business.command.adicionar;
 
-import com.ultrasandbox.planetas.business.command.operations.AdicionarPlanetaOperation;
-import com.ultrasandbox.planetas.business.command.processors.AdicionarPlanetaProcessor;
+import com.ultrasandbox.planetas.business.command.adicionar.processors.AdicionarMetadataProcessor;
+import com.ultrasandbox.planetas.business.command.adicionar.processors.AdicionarPlanetaProcessor;
 import com.ultrasandbox.planetas.core.utils.Pipeline;
 import com.ultrasandbox.planetas.domain.models.Planeta;
 import org.springframework.stereotype.Component;
 
 @Component
 public record AdicionarPlanetaCommand(
-        AdicionarPlanetaProcessor adicionarPlanetaProcessor) {
+        AdicionarPlanetaProcessor adicionarPlanetaProcessor,
+        AdicionarMetadataProcessor adicionarMetadataProcessor) {
 
     public Planeta process(Planeta planeta) {
         var operation = new AdicionarPlanetaOperation();
@@ -16,6 +17,7 @@ public record AdicionarPlanetaCommand(
 
         return Pipeline.of(operation)
                 .process(adicionarPlanetaProcessor)
+                .process(adicionarMetadataProcessor)
                 .getOutput()
                 .getPlaneta();
     }

@@ -1,6 +1,6 @@
-package com.ultrasandbox.planetas.business.command.processors;
+package com.ultrasandbox.planetas.business.command.deletar.processors;
 
-import com.ultrasandbox.planetas.business.command.operations.DeletarPlanetaPorIdOperation;
+import com.ultrasandbox.planetas.business.command.deletar.DeletarPlanetaPorIdOperation;
 import com.ultrasandbox.planetas.core.repository.PlanetaRepository;
 import com.ultrasandbox.planetas.core.utils.Processor;
 import lombok.RequiredArgsConstructor;

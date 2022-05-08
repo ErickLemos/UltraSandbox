@@ -1,7 +1,8 @@
 package com.ultrasandbox.planetas.business;
 
-import com.ultrasandbox.planetas.business.command.AdicionarPlanetaCommand;
-import com.ultrasandbox.planetas.business.command.DeletarPlanetaPorIdCommand;
+import com.ultrasandbox.planetas.business.command.adicionar.AdicionarPlanetaCommand;
+import com.ultrasandbox.planetas.business.command.deletar.DeletarPlanetaPorIdCommand;
+import com.ultrasandbox.planetas.business.command.editar.EditarPlanetaCommand;
 import com.ultrasandbox.planetas.business.querys.BuscarPlanetaPorIdQuery;
 import com.ultrasandbox.planetas.business.querys.BuscarPlanetasQuery;
 import com.ultrasandbox.planetas.core.business.operations.PlanetaOperations;
@@ -10,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Objects;
 
 @Component
 @RequiredArgsConstructor
@@ -19,6 +21,7 @@ public class PlanetaOperationsImpl implements PlanetaOperations {
     private final BuscarPlanetaPorIdQuery buscarPlanetaPorIdQuery;
 
     private final AdicionarPlanetaCommand adicionarPlanetaCommand;
+    private final EditarPlanetaCommand editarPlanetaCommand;
     private final DeletarPlanetaPorIdCommand deletarPlanetaPorIdCommand;
 
     @Override
@@ -33,7 +36,9 @@ public class PlanetaOperationsImpl implements PlanetaOperations {
 
     @Override
     public Planeta salvar(Planeta planeta) {
-        return adicionarPlanetaCommand.process(planeta);
+        return Objects.isNull(planeta.getId()) ?
+                adicionarPlanetaCommand.process(planeta) :
+                editarPlanetaCommand.process(planeta);
     }
 
     @Override

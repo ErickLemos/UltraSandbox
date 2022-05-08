@@ -1,10 +1,10 @@
-package com.ultrasandbox.planetas.business.command.operations;
+package com.ultrasandbox.planetas.business.command.editar;
 
 import com.ultrasandbox.planetas.domain.models.Planeta;
 import lombok.Data;
 
 @Data
-public class AdicionarPlanetaOperation {
+public class EditarPlanetaOperation {
 
     private Planeta planeta;
 

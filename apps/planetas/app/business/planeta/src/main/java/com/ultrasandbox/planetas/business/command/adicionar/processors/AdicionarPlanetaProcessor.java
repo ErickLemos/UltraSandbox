@@ -1,6 +1,6 @@
-package com.ultrasandbox.planetas.business.command.processors;
+package com.ultrasandbox.planetas.business.command.adicionar.processors;
 
-import com.ultrasandbox.planetas.business.command.operations.AdicionarPlanetaOperation;
+import com.ultrasandbox.planetas.business.command.adicionar.AdicionarPlanetaOperation;
 import com.ultrasandbox.planetas.core.repository.PlanetaRepository;
 import com.ultrasandbox.planetas.core.utils.Processor;
 import lombok.RequiredArgsConstructor;

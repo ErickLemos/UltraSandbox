@@ -15,26 +15,27 @@ import java.util.List;
 public class PlanetaRepositoryImpl implements PlanetaRepository {
 
     private final PlanetaMongoRepository repository;
-    private final PlanetaEntityMapper mapper;
 
     @Override
     public List<Planeta> buscar() {
         var entidades = repository.findAll();
-        return entidades.stream().map(mapper::toDomain).toList();
+        return entidades.stream()
+                .map(PlanetaEntityMapper.INSTANCE::toDomain)
+                .toList();
     }
 
     @Override
     public Planeta buscarPorId(String id) {
         var entidade = repository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Planeta não foi encontrado"));
-        return mapper.toDomain(entidade);
+        return PlanetaEntityMapper.INSTANCE.toDomain(entidade);
     }
 
     @Override
     public Planeta salvar(Planeta planeta) {
-        var entidade = mapper.toEntity(planeta);
+        var entidade = PlanetaEntityMapper.INSTANCE.toEntity(planeta);
         var entidadeSalva = repository.save(entidade);
-        return mapper.toDomain(entidadeSalva);
+        return PlanetaEntityMapper.INSTANCE.toDomain(entidadeSalva);
     }
 
     @Override

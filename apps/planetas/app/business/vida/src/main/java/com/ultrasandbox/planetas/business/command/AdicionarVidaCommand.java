@@ -1,7 +1,7 @@
 package com.ultrasandbox.planetas.business.command;
 
-import com.ultrasandbox.planetas.business.command.operations.AdicionarVidaOperation;
-import com.ultrasandbox.planetas.business.command.processors.AdicionarVidaProcessor;
+import com.ultrasandbox.planetas.business.command.deletar.operations.AdicionarVidaOperation;
+import com.ultrasandbox.planetas.business.command.deletar.processors.AdicionarVidaProcessor;
 import com.ultrasandbox.planetas.core.utils.Pipeline;
 import com.ultrasandbox.planetas.domain.models.vida.Vida;
 import lombok.RequiredArgsConstructor;

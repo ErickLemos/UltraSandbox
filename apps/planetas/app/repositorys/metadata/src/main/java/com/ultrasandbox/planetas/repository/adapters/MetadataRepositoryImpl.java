@@ -35,9 +35,13 @@ public class MetadataRepositoryImpl implements MetadataRepository {
     }
 
     @Override
-    public Metadata salvar(Metadata metadata) {
-        var entity = MetadataEntityMapper.INSTANCE.toEntity(metadata);
-        var entitySalva = repository.save(entity);
+    public Metadata salvar(Planeta planeta, Metadata metadata) {
+        var planetaEntity = PlanetaEntityMapper.INSTANCE.toEntity(planeta);
+        var metadataEntity = MetadataEntityMapper.INSTANCE.toEntity(metadata);
+        metadataEntity.setPlaneta(planetaEntity);
+
+        var entitySalva = repository.save(metadataEntity);
+
         return MetadataEntityMapper.INSTANCE.toDomain(entitySalva);
     }
 
