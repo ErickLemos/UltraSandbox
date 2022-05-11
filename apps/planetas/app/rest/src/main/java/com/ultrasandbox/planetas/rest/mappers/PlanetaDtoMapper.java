@@ -4,19 +4,22 @@ import com.ultrasandbox.planetas.domain.models.Planeta;
 import com.ultrasandbox.planetas.rest.models.PlanetaDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 
-@Mapper(componentModel = "spring")
+@Mapper
 public interface PlanetaDtoMapper {
+
+    PlanetaDtoMapper INSTANCE = Mappers.getMapper(PlanetaDtoMapper.class);
 
     @Mapping(target = "id", source = "id")
     @Mapping(target = "nome", source = "nome")
     @Mapping(target = "vida", ignore = true)
     @Mapping(target = "metadata", ignore = true)
     @Mapping(target = "geografia", ignore = true)
-    Planeta toDomain(PlanetaDto dto);
+    Planeta mapFrom(PlanetaDto dto);
 
     @Mapping(target = "id", source = "id")
     @Mapping(target = "nome", source = "nome")
-    PlanetaDto toDto(Planeta domain);
+    PlanetaDto mapFrom(Planeta domain);
 
 }

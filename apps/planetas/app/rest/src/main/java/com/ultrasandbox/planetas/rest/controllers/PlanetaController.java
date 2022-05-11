@@ -21,14 +21,14 @@ public class PlanetaController {
     @GetMapping
     public ResponseEntity<List<PlanetaDto>> buscarTodos() {
         var planetas = operations.buscar();
-        var dtos = planetas.stream().map(mapper::toDto).toList();
+        var dtos = planetas.stream().map(mapper::mapFrom).toList();
         return ResponseEntity.ok(dtos);
     }
 
     @GetMapping("{id}")
     public ResponseEntity<PlanetaDto> buscarPorId(@PathVariable String id) {
         var planeta = operations.buscarPorId(id);
-        var dto = mapper.toDto(planeta);
+        var dto = mapper.mapFrom(planeta);
         return ResponseEntity.ok(dto);
     }
 
@@ -49,9 +49,9 @@ public class PlanetaController {
     }
 
     private ResponseEntity<PlanetaDto> salvar(PlanetaDto dto) {
-        var planeta = mapper.toDomain(dto);
+        var planeta = mapper.mapFrom(dto);
         var planetaSalvo = operations.salvar(planeta);
-        var dtoRetorno = mapper.toDto(planetaSalvo);
+        var dtoRetorno = mapper.mapFrom(planetaSalvo);
         return ResponseEntity.ok(dtoRetorno);
     }
 

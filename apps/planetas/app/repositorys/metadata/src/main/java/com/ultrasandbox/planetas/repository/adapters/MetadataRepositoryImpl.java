@@ -21,28 +21,28 @@ public class MetadataRepositoryImpl implements MetadataRepository {
         var entity = repository.findById(id)
                 .orElseThrow(() -> new NotFoundException("metadata não foi encontrada"));
 
-        return MetadataEntityMapper.INSTANCE.toDomain(entity);
+        return MetadataEntityMapper.INSTANCE.mapFrom(entity);
     }
 
     @Override
     public Metadata buscarPorPlaneta(Planeta planeta) {
-        var planetaEntity = PlanetaEntityMapper.INSTANCE.toEntity(planeta);
+        var planetaEntity = PlanetaEntityMapper.INSTANCE.mapFrom(planeta);
 
         var entity = repository.findByPlaneta(planetaEntity)
                 .orElseThrow(() -> new NotFoundException("metadata não foi encontrada"));
 
-        return MetadataEntityMapper.INSTANCE.toDomain(entity);
+        return MetadataEntityMapper.INSTANCE.mapFrom(entity);
     }
 
     @Override
     public Metadata salvar(Planeta planeta, Metadata metadata) {
-        var planetaEntity = PlanetaEntityMapper.INSTANCE.toEntity(planeta);
-        var metadataEntity = MetadataEntityMapper.INSTANCE.toEntity(metadata);
+        var planetaEntity = PlanetaEntityMapper.INSTANCE.mapFrom(planeta);
+        var metadataEntity = MetadataEntityMapper.INSTANCE.mapFrom(metadata);
         metadataEntity.setPlaneta(planetaEntity);
 
         var entitySalva = repository.save(metadataEntity);
 
-        return MetadataEntityMapper.INSTANCE.toDomain(entitySalva);
+        return MetadataEntityMapper.INSTANCE.mapFrom(entitySalva);
     }
 
     @Override

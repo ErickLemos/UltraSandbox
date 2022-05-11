@@ -12,10 +12,10 @@ public interface MetadataEntityMapper {
     MetadataEntityMapper INSTANCE = Mappers.getMapper(MetadataEntityMapper.class);
 
     @Mapping(target = "id", source = "id")
-    Metadata toDomain(MetadataEntity entity);
+    Metadata mapFrom(MetadataEntity entity);
 
     @Mapping(target = "id", source = "id")
     @Mapping(target = "planeta", ignore = true)
-    MetadataEntity toEntity(Metadata domain);
+    MetadataEntity mapFrom(Metadata domain);
 
 }

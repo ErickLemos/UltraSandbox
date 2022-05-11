@@ -14,8 +14,8 @@ public interface VidaAnimalDadosEntityMapper {
     @Mapping(target = "alimentacao", ignore = true)
     @Mapping(target = "tipoDeAnimal", ignore = true)
     @Mapping(target = "tipoDeAlimentacao", ignore = true)
-    AnimalDados toDomain(AnimalDadosEntity entity);
+    AnimalDados mapFrom(AnimalDadosEntity entity);
 
-    AnimalDadosEntity toEntity(AnimalDados domain);
+    AnimalDadosEntity mapFrom(AnimalDados domain);
 
 }

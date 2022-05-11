@@ -16,12 +16,12 @@ public interface PlantaDtoMapper {
     @Mapping(target = "nome", source = "nome")
     @Mapping(target = "tipo", source = "tipo", qualifiedByName = "stringToEnum")
     @Mapping(target = "dados", ignore = true)
-    Planta toDomain(VidaDto dto);
+    Planta mapFrom(VidaDto dto);
 
     @Mapping(target = "id", source = "id")
     @Mapping(target = "nome", source = "nome")
     @Mapping(target = "tipo", source = "tipo", qualifiedByName = "enumToString")
     @Mapping(target = "dados", ignore = true)
-    VidaDto toDto(Planta planta);
+    VidaDto mapFrom(Planta planta);
 
 }

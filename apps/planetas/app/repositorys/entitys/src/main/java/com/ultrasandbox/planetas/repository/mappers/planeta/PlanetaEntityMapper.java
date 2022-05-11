@@ -16,10 +16,10 @@ public interface PlanetaEntityMapper {
     @Mapping(target = "vida", ignore = true)
     @Mapping(target = "metadata", ignore = true)
     @Mapping(target = "geografia", ignore = true)
-    Planeta toDomain(PlanetaEntity entity);
+    Planeta mapFrom(PlanetaEntity entity);
 
     @Mapping(target = "id", source = "id")
     @Mapping(target = "nome", source = "nome")
-    PlanetaEntity toEntity(Planeta domain);
+    PlanetaEntity mapFrom(Planeta domain);
 
 }

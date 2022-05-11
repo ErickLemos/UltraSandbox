@@ -15,13 +15,13 @@ public interface VidaPlantaEntityMapper {
     VidaPlantaEntityMapper INSTANCE = Mappers.getMapper(VidaPlantaEntityMapper.class);
 
     @Mapping(target = "dados", ignore = true)
-    Planta toDomain(VidaEntity entity);
+    Planta mapFrom(VidaEntity entity);
 
-    VidaEntity toEntity(Planta domain);
+    VidaEntity mapFrom(Planta domain);
 
     @AfterMapping
-    default void toDomain(@MappingTarget Planta domain, VidaEntity entity) {
-        domain.setDados(VidaPlantaDadosEntityMapper.INSTANCE.toDomain((PlantaDadosEntity) entity.getDados()));
+    default void mapFrom(@MappingTarget Planta domain, VidaEntity entity) {
+        domain.setDados(VidaPlantaDadosEntityMapper.INSTANCE.mapFrom((PlantaDadosEntity) entity.getDados()));
     }
 
 }

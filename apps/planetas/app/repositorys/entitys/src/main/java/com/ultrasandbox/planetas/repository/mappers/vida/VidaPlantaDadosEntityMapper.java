@@ -10,8 +10,8 @@ public interface VidaPlantaDadosEntityMapper {
 
     VidaPlantaDadosEntityMapper INSTANCE = Mappers.getMapper(VidaPlantaDadosEntityMapper.class);
 
-    PlantaDados toDomain(PlantaDadosEntity entity);
+    PlantaDados mapFrom(PlantaDadosEntity entity);
 
-    PlantaDadosEntity toEntity(PlantaDados domain);
+    PlantaDadosEntity mapFrom(PlantaDados domain);
 
 }

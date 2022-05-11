@@ -22,12 +22,12 @@ public interface VidaAnimalEntityMapper {
 
     @AfterMapping
     default void toDomain(@MappingTarget Animal domain, VidaEntity entity) {
-        domain.setDados(VidaAnimalDadosEntityMapper.INSTANCE.toDomain((AnimalDadosEntity) entity.getDados()));
+        domain.setDados(VidaAnimalDadosEntityMapper.INSTANCE.mapFrom((AnimalDadosEntity) entity.getDados()));
     }
 
     @AfterMapping
     default void toEntity(@MappingTarget VidaEntity entity, Animal domain) {
-        entity.setDados(VidaAnimalDadosEntityMapper.INSTANCE.toEntity(domain.getDados()));
+        entity.setDados(VidaAnimalDadosEntityMapper.INSTANCE.mapFrom(domain.getDados()));
     }
 
 }

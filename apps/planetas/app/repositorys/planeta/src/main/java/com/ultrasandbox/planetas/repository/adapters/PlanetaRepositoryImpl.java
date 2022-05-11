@@ -20,7 +20,7 @@ public class PlanetaRepositoryImpl implements PlanetaRepository {
     public List<Planeta> buscar() {
         var entidades = repository.findAll();
         return entidades.stream()
-                .map(PlanetaEntityMapper.INSTANCE::toDomain)
+                .map(PlanetaEntityMapper.INSTANCE::mapFrom)
                 .toList();
     }
 
@@ -28,14 +28,14 @@ public class PlanetaRepositoryImpl implements PlanetaRepository {
     public Planeta buscarPorId(String id) {
         var entidade = repository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Planeta não foi encontrado"));
-        return PlanetaEntityMapper.INSTANCE.toDomain(entidade);
+        return PlanetaEntityMapper.INSTANCE.mapFrom(entidade);
     }
 
     @Override
     public Planeta salvar(Planeta planeta) {
-        var entidade = PlanetaEntityMapper.INSTANCE.toEntity(planeta);
+        var entidade = PlanetaEntityMapper.INSTANCE.mapFrom(planeta);
         var entidadeSalva = repository.save(entidade);
-        return PlanetaEntityMapper.INSTANCE.toDomain(entidadeSalva);
+        return PlanetaEntityMapper.INSTANCE.mapFrom(entidadeSalva);
     }
 
     @Override

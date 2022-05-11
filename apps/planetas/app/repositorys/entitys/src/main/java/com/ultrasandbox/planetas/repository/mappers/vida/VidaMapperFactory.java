@@ -8,15 +8,15 @@ import com.ultrasandbox.planetas.domain.models.vida.Vida;
 import com.ultrasandbox.planetas.repository.entitys.vida.VidaEntity;
 
 public interface VidaMapperFactory {
-    static Vida toDomain(VidaEntity entity) {
+    static Vida mapFrom(VidaEntity entity) {
         if (entity.getTipo() == TipoDeVida.ANIMAL) return VidaAnimalEntityMapper.INSTANCE.toDomain(entity);
-        if (entity.getTipo() == TipoDeVida.PLANTA) return VidaPlantaEntityMapper.INSTANCE.toDomain(entity);
+        if (entity.getTipo() == TipoDeVida.PLANTA) return VidaPlantaEntityMapper.INSTANCE.mapFrom(entity);
         throw new FactoryException();
     }
 
-    static VidaEntity toEntity(Vida vida) {
+    static VidaEntity mapFrom(Vida vida) {
         if (vida.getTipo() == TipoDeVida.ANIMAL) return VidaAnimalEntityMapper.INSTANCE.toEntity((Animal) vida);
-        if (vida.getTipo() == TipoDeVida.PLANTA) return VidaPlantaEntityMapper.INSTANCE.toEntity((Planta) vida);
+        if (vida.getTipo() == TipoDeVida.PLANTA) return VidaPlantaEntityMapper.INSTANCE.mapFrom((Planta) vida);
         throw new FactoryException();
     }
 }
