@@ -22,16 +22,16 @@ public interface AnimalDtoMapper {
     @Mapping(target = "nome", source = "nome")
     @Mapping(target = "tipo", source = "tipo", qualifiedByName = "stringToEnum")
     @Mapping(target = "dados", ignore = true)
-    Animal toDomain(VidaDto dto);
+    Animal mapFrom(VidaDto dto);
 
     @Mapping(target = "id", source = "id")
     @Mapping(target = "nome", source = "nome")
     @Mapping(target = "tipo", source = "tipo", qualifiedByName = "enumToString")
     @Mapping(target = "dados", ignore = true)
-    VidaDto toDto(Animal domain);
+    VidaDto mapFrom(Animal domain);
 
     @AfterMapping
-    default void toDomain(@MappingTarget Animal animal, VidaDto dto) {
+    default void mapFrom(@MappingTarget Animal animal, VidaDto dto) {
         ObjectMapper objectMapper = new ObjectMapper();
         var dadosDto = objectMapper.convertValue(dto.getDados(), DadosAnimalDto.class);
 
@@ -40,7 +40,7 @@ public interface AnimalDtoMapper {
     }
 
     @AfterMapping
-    default void toDto(@MappingTarget VidaDto dto, Animal domain) {
+    default void mapFrom(@MappingTarget VidaDto dto, Animal domain) {
         dto.setDados(domain.getDados());
     }
 

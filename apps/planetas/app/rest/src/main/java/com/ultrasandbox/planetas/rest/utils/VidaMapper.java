@@ -14,13 +14,13 @@ import org.springframework.stereotype.Component;
 public class VidaMapper {
 
     public Vida toDomain(VidaDto dto) {
-        if (dto.getTipo().equalsIgnoreCase("animal")) return AnimalDtoMapper.INSTANCE.toDomain(dto);
+        if (dto.getTipo().equalsIgnoreCase("animal")) return AnimalDtoMapper.INSTANCE.mapFrom(dto);
         if (dto.getTipo().equalsIgnoreCase("planta")) return PlantaDtoMapper.INSTANCE.toDomain(dto);
         throw new NotFoundException("tipo não foi encontrado");
     }
 
     public VidaDto toDto(Vida domain) {
-        if (domain.getTipo() == TipoDeVida.ANIMAL) return AnimalDtoMapper.INSTANCE.toDto((Animal) domain);
+        if (domain.getTipo() == TipoDeVida.ANIMAL) return AnimalDtoMapper.INSTANCE.mapFrom((Animal) domain);
         if (domain.getTipo() == TipoDeVida.PLANTA) return PlantaDtoMapper.INSTANCE.toDto((Planta) domain);
         throw new NotFoundException("tipo não foi encontrado");
     }
