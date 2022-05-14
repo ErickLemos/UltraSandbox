@@ -1,8 +1,8 @@
 package com.ultrasandbox.planetas.rest.controllers;
 
 import com.ultrasandbox.planetas.core.business.actions.MetadataActions;
-import com.ultrasandbox.planetas.domain.models.Metadata;
 import com.ultrasandbox.planetas.domain.models.Planeta;
+import com.ultrasandbox.planetas.domain.models.metadata.Metadata;
 import com.ultrasandbox.planetas.rest.mappers.MetadataDtoMapper;
 import com.ultrasandbox.planetas.rest.models.MetadataDto;
 import lombok.RequiredArgsConstructor;

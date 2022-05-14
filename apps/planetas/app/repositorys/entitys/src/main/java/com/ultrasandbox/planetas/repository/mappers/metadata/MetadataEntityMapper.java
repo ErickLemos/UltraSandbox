@@ -1,6 +1,6 @@
 package com.ultrasandbox.planetas.repository.mappers.metadata;
 
-import com.ultrasandbox.planetas.domain.models.Metadata;
+import com.ultrasandbox.planetas.domain.models.metadata.Metadata;
 import com.ultrasandbox.planetas.repository.entitys.metadata.MetadataEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

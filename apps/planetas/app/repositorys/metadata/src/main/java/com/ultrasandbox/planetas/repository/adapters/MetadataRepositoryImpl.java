@@ -2,8 +2,8 @@ package com.ultrasandbox.planetas.repository.adapters;
 
 import com.ultrasandbox.planetas.core.exceptions.NotFoundException;
 import com.ultrasandbox.planetas.core.repository.MetadataRepository;
-import com.ultrasandbox.planetas.domain.models.Metadata;
 import com.ultrasandbox.planetas.domain.models.Planeta;
+import com.ultrasandbox.planetas.domain.models.metadata.Metadata;
 import com.ultrasandbox.planetas.repository.mappers.metadata.MetadataEntityMapper;
 import com.ultrasandbox.planetas.repository.mappers.planeta.PlanetaEntityMapper;
 import com.ultrasandbox.planetas.repository.repositorys.MetadataMongoRepository;

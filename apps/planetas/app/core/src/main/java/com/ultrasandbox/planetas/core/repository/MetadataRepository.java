@@ -1,7 +1,7 @@
 package com.ultrasandbox.planetas.core.repository;
 
-import com.ultrasandbox.planetas.domain.models.Metadata;
 import com.ultrasandbox.planetas.domain.models.Planeta;
+import com.ultrasandbox.planetas.domain.models.metadata.Metadata;
 
 public interface MetadataRepository {
 

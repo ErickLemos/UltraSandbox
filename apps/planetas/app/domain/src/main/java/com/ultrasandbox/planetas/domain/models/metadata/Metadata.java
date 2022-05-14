@@ -1,4 +1,4 @@
-package com.ultrasandbox.planetas.domain.models;
+package com.ultrasandbox.planetas.domain.models.metadata;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

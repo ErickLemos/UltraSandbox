@@ -2,8 +2,8 @@ package com.ultrasandbox.planetas.business;
 
 import com.ultrasandbox.planetas.core.business.actions.MetadataActions;
 import com.ultrasandbox.planetas.core.repository.MetadataRepository;
-import com.ultrasandbox.planetas.domain.models.Metadata;
 import com.ultrasandbox.planetas.domain.models.Planeta;
+import com.ultrasandbox.planetas.domain.models.metadata.Metadata;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

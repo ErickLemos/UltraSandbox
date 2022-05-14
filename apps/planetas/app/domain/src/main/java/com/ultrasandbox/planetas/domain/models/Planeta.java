@@ -1,5 +1,6 @@
 package com.ultrasandbox.planetas.domain.models;
 
+import com.ultrasandbox.planetas.domain.models.metadata.Metadata;
 import com.ultrasandbox.planetas.domain.models.vida.Vida;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
