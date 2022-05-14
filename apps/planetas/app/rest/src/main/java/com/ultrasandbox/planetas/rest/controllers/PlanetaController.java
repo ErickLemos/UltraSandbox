@@ -16,19 +16,18 @@ import java.util.List;
 public class PlanetaController {
 
     private final PlanetaActions operations;
-    private final PlanetaDtoMapper mapper;
 
     @GetMapping
     public ResponseEntity<List<PlanetaDto>> buscarTodos() {
         var planetas = operations.buscar();
-        var dtos = planetas.stream().map(mapper::mapFrom).toList();
+        var dtos = planetas.stream().map(PlanetaDtoMapper.INSTANCE::mapFrom).toList();
         return ResponseEntity.ok(dtos);
     }
 
     @GetMapping("{id}")
     public ResponseEntity<PlanetaDto> buscarPorId(@PathVariable String id) {
         var planeta = operations.buscarPorId(id);
-        var dto = mapper.mapFrom(planeta);
+        var dto = PlanetaDtoMapper.INSTANCE.mapFrom(planeta);
         return ResponseEntity.ok(dto);
     }
 
@@ -49,9 +48,9 @@ public class PlanetaController {
     }
 
     private ResponseEntity<PlanetaDto> salvar(PlanetaDto dto) {
-        var planeta = mapper.mapFrom(dto);
+        var planeta = PlanetaDtoMapper.INSTANCE.mapFrom(dto);
         var planetaSalvo = operations.salvar(planeta);
-        var dtoRetorno = mapper.mapFrom(planetaSalvo);
+        var dtoRetorno = PlanetaDtoMapper.INSTANCE.mapFrom(planetaSalvo);
         return ResponseEntity.ok(dtoRetorno);
     }
 

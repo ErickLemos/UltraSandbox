@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("{idPlaneta/metadata}")
+@RequestMapping("{idPlaneta}/metadata")
 @RequiredArgsConstructor
 public class MetadataController {
 
