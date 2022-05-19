@@ -1,5 +1,6 @@
 package com.ultrasandbox.planetas.repository.adapters;
 
+import com.ultrasandbox.planetas.core.constants.MensagensConstants;
 import com.ultrasandbox.planetas.core.exceptions.NotFoundException;
 import com.ultrasandbox.planetas.core.repository.MetadataRepository;
 import com.ultrasandbox.planetas.domain.models.Planeta;
@@ -19,7 +20,7 @@ public class MetadataRepositoryImpl implements MetadataRepository {
     @Override
     public Metadata buscarPorId(String id) {
         var entity = repository.findById(id)
-                .orElseThrow(() -> new NotFoundException("metadata não foi encontrada"));
+                .orElseThrow(() -> new NotFoundException(MensagensConstants.NAO_ENCONTRADO.getValor()));
 
         return MetadataEntityMapper.INSTANCE.mapFrom(entity);
     }
@@ -29,7 +30,7 @@ public class MetadataRepositoryImpl implements MetadataRepository {
         var planetaEntity = PlanetaEntityMapper.INSTANCE.mapFrom(planeta);
 
         var entity = repository.findByPlaneta(planetaEntity)
-                .orElseThrow(() -> new NotFoundException("metadata não foi encontrada"));
+                .orElseThrow(() -> new NotFoundException(MensagensConstants.NAO_ENCONTRADO.getValor()));
 
         return MetadataEntityMapper.INSTANCE.mapFrom(entity);
     }
@@ -47,7 +48,7 @@ public class MetadataRepositoryImpl implements MetadataRepository {
 
     @Override
     public void deletarPorId(String id) {
-        if (!repository.existsById(id)) throw new NotFoundException("metadata não foi encontrada");
+        if (!repository.existsById(id)) throw new NotFoundException(MensagensConstants.NAO_ENCONTRADO.getValor());
         repository.deleteById(id);
     }
 
